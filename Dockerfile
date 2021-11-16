@@ -1,7 +1,9 @@
 # Container image that runs your code
-FROM alpine:latest
+FROM alpine:3
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+RUN wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip -q -O /tmp/commandlinetools-linux.zip &&\
+    unzip /tmp/commandlinetools-linux.zip -d /commandlinetools
+
 COPY entrypoint.sh /entrypoint.sh
 
 RUN ["chmod", "+x", "/entrypoint.sh"]
