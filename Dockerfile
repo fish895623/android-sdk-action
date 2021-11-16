@@ -5,7 +5,7 @@ ENV ANDROID_SDK_ROOT=/sdk
 RUN apk update && apk --no-cache add openjdk8=~8.282
 RUN wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip -q -O /tmp/commandlinetools-linux.zip &&\
     unzip /tmp/commandlinetools-linux.zip -d /commandlinetools &&\
-    cat /commandlinetools/cmdline-tools/lib/README
+    rm -rf /tmp/commandlinetools-linux.zip
 
 RUN sh -c "yes | /commandlinetools/cmdline-tools/bin/sdkmanager --sdk_root=/sdk --licenses"
 
