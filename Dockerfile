@@ -2,7 +2,8 @@
 FROM alpine:3
 
 RUN wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip -q -O /tmp/commandlinetools-linux.zip &&\
-    unzip /tmp/commandlinetools-linux.zip -d /commandlinetools
+    unzip /tmp/commandlinetools-linux.zip -d /commandlinetools &&\
+    cat /commandlinetools/cmdline-tools/lib/README
 
 COPY entrypoint.sh /entrypoint.sh
 
