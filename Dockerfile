@@ -7,7 +7,7 @@ RUN wget https://dl.google.com/android/repository/commandlinetools-linux-7583922
     unzip /tmp/commandlinetools-linux.zip -d /commandlinetools &&\
     cat /commandlinetools/cmdline-tools/lib/README
 
-RUN sh -c "yes | /commandlinetools/cmdline-tools/bin/sdkmanager --licenses --sdk-root=$ANDROID_SDK_ROOT"
+RUN sh -c "yes | /commandlinetools/cmdline-tools/bin/sdkmanager --licenses --sdk-root=/sdk"
 
 COPY entrypoint.sh /entrypoint.sh
 
