@@ -3,5 +3,5 @@
 echo "$1"
 version=$1
 
-sh -c '/commandlinetools/cmdline-tools/bin/sdkmanager --sdk_root=/sdk "platforms;android-$version"'
+/commandlinetools/cmdline-tools/bin/sdkmanager --sdk_root=/sdk "platforms;android-$1"
 echo "SDK installed"
